@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1a1018">
+  <meta name="description" content="Un morceau choisi pour Kelly et un verset biblique à découvrir chaque jour.">
+  <title>At Midnight with Kelly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./playlist.js"></script>
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="masthead">
+      <span class="masthead-icon" aria-hidden="true">✦</span>
+      <time id="today"></time>
+    </header>
+
+    <main class="feature" id="feature">
+      <aside class="daily-verse" id="daily-verse" aria-label="Verset du jour" hidden>
+        <blockquote><p id="verse-text"></p></blockquote>
+        <a class="verse-source" id="verse-source" target="_blank" rel="noopener" title="Lire le verset dans un nouvel onglet"></a>
+      </aside>
+
+      <h1><span>At Midnight</span> <em>with Kelly</em></h1>
+
+      <div class="cover" aria-hidden="true">
+        <img id="cover-image" src="./assets/vinyle.jpg" width="1100" height="1100" alt="">
+        <div class="cover-flash"></div>
+        <div class="sparkles"><span>✦</span><span>✧</span><span>✦</span></div>
+      </div>
+
+      <div class="interaction">
+        <button id="discover" class="discover" type="button" hidden>
+          <span aria-hidden="true" class="button-star">✦</span> Découvrir le son
+        </button>
+        <p class="state" id="empty" role="status" hidden></p>
+        <section class="player" id="player" aria-labelledby="track-title" hidden>
+          <p class="eyebrow">À écouter</p>
+          <h2 id="track-title" tabindex="-1"></h2>
+          <p class="artist" id="artist"></p>
+          <audio id="audio" controls preload="none" aria-label="Lecteur du morceau"></audio>
+          <p id="audio-error" class="state" role="status" hidden>Le morceau est indisponible pour le moment.</p>
+          <button class="another-track" id="another-track" type="button" hidden>Découvrir un autre son <span aria-hidden="true">→</span></button>
+        </section>
+        <p class="demo-note" id="demo-note" hidden>Aperçu avec un morceau de démonstration</p>
+        <noscript>Active JavaScript pour découvrir le son du jour.</noscript>
+      </div>
+    </main>
+
+    <footer class="countdown" id="next-track" hidden>
+      <div class="next">
+        <span class="clock" aria-hidden="true"></span>
+        <div><p>Prochain morceau à minuit</p><span>Heure de Paris</span></div>
+      </div>
+      <time id="countdown" aria-label="Temps avant minuit">--:--:--</time>
+    </footer>
+  </div>
+</body>
+</html>
